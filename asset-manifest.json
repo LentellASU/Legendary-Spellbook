@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Legendary-Spellbook/static/css/main.e6c13ad2.css",
-    "main.js": "/Legendary-Spellbook/static/js/main.08f9081b.js",
+    "main.js": "/Legendary-Spellbook/static/js/main.ea18da2a.js",
     "index.html": "/Legendary-Spellbook/index.html",
     "main.e6c13ad2.css.map": "/Legendary-Spellbook/static/css/main.e6c13ad2.css.map",
-    "main.08f9081b.js.map": "/Legendary-Spellbook/static/js/main.08f9081b.js.map"
+    "main.ea18da2a.js.map": "/Legendary-Spellbook/static/js/main.ea18da2a.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.08f9081b.js"
+    "static/js/main.ea18da2a.js"
   ]
 }
