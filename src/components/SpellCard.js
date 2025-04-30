@@ -45,9 +45,16 @@ const SpellCard = ({ spell }) => {
 					border: "2px solid #8b5e3c",
 					borderRadius: "16px",
 					boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+					transition: "all 0.3s ease-in-out",
+					transform: "translateY(0)",
+					"&:hover": {
+						transform: "translateY(-8px)",
+						boxShadow: "0 8px 20px rgba(76, 201, 240, 0.7)", // neon blue shadow
+						borderColor: "#4cc9f0",
+					},
 					marginBottom: 2,
 					width: "260px",
-					height: "180px"
+					height: "180px",
 				}}
 			>
 				<CardContent>

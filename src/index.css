@@ -5,9 +5,213 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ background-color: black;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.magic-orb {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #4cc9f0, #1d1d1d);
+  box-shadow: 0 0 12px #4cc9f0, 0 0 24px #4cc9f0;
+  animation: bounceAround 6s ease-in-out infinite;
+    top: 20%;
+  left: 20%;
+  z-index: 2;
+}
+
+.magic-orb2 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f70101, #1d1d1d);
+  box-shadow: 0 0 12px #f70101, 0 0 24px #f70101;
+  animation: bounceAround2 6s ease-in-out infinite;
+    top: 80%;
+  left: 80%;
+  z-index: 1;
+}
+
+@keyframes bounceAround {
+  0%   { top: 10%; left: 10%; }
+  25%  { top: 20%; left: 80%; }
+  50%  { top: 60%; left: 60%; }
+  75%  { top: 80%; left: 20%; }
+  100% { top: 10%; left: 10%; }
+}
+
+@keyframes bounceAround2 {
+  0%   { top: 80%; left: 80%; }
+  25%  { top: 60%; left: 60%; }
+  50%  { top: 20%; left: 20%; }
+  75%  { top: 10%; left: 10%; }
+  100% { top: 80%; left: 80%; }
+}
+
+.spellbook-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #4cc9f0;
+  border-radius: 16px;
+  box-shadow:
+    0 0 20px #4cc9f0,
+    0 0 40px #4cc9f0,
+    0 0 60px #4cc9f0;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.lightning-flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(2, 199, 249, 0.2) 0%, transparent 80%);
+  opacity: 0;
+  animation: lightningFlash 7s infinite ease-in-out;
+  z-index: 2;
+}
+
+@keyframes lightningFlash {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  10% {
+    opacity: 0.6;
+    transform: scale(1.5);
+  }
+  12% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  55% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.8;
+    transform: scale(1.4);
+  }
+  62% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.book-frame {
+  position: relative;
+  box-shadow: 0 0 20px #4cc9f0 inset;
+  z-index: 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.lightning-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  pointer-events: none;
+  border-radius: 12px;
+  animation: lightningSparkle 1.5s infinite ease-in-out;
+  z-index: 1;
+}
+
+/* Blue lightning clockwise */
+.ring-one {
+  border-image: linear-gradient(90deg, #4cc9f0, transparent) 1;
+  animation: traceClockwise 4s linear infinite;
+}
+
+/* Purple lightning counter-clockwise */
+.ring-two {
+  border-image: linear-gradient(270deg, #9d4edd, transparent) 1;
+  animation: traceCounter 5s linear infinite;
+}
+
+/* Red lightning clockwise */
+.ring-three {
+  border-image: linear-gradient(270deg, #ef1f1f, transparent) 1;
+  animation: traceClockwise 6s linear infinite;
+}
+
+/* Green lightning counter-clockwise */
+.ring-four {
+  border-image: linear-gradient(180deg, #0afc02, transparent) 1;
+  animation: traceCounter 7s linear infinite;
+}
+
+/* Clockwise border lightning */
+@keyframes traceClockwise {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+    scale: -1.5;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.6;
+  }
+}
+
+/* Counter-clockwise border lightning */
+@keyframes traceCounter {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+    scale: -1.5;
+  }
+  100% {
+    transform: rotate(-360deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes lightningSparkle {
+  0%, 100% {
+    filter: brightness(1);
+    box-shadow: 0 0 10px #4cc9f0, 0 0 20px #4cc9f0;
+    transform: scale(1);
+  }
+  25% {
+    filter: brightness(1.5);
+    box-shadow: 0 0 20px #4cc9f0, 0 0 40px #4cc9f0;
+    transform: scale(1.02);
+  }
+  50% {
+    filter: brightness(2);
+    box-shadow: 0 0 30px #4cc9f0, 0 0 60px #4cc9f0;
+    transform: scale(1.05);
+  }
+  75% {
+    filter: brightness(1.2);
+    box-shadow: 0 0 15px #4cc9f0, 0 0 30px #4cc9f0;
+    transform: scale(1.01);
+  }
 }

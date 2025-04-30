@@ -14,7 +14,16 @@ const Header = () => {
 				</Typography>
 				<Box>
 					<Button
-						sx={{ fontFamily: "Papyrus, fantasy" }}
+						sx={{
+							fontFamily: "Papyrus, fantasy",
+							fontFamily: "Papyrus, fantasy",
+							transition: "all 0.3s ease",
+							"&:hover": {
+								color: "#4cc9f0",
+								textShadow:
+									"0 0 10px #4cc9f0, 0 0 20px #4cc9f0, 0 0 30px #4cc9f0",
+							},
+						}}
 						color="inherit"
 						component={Link}
 						to="/"
@@ -22,7 +31,16 @@ const Header = () => {
 						Home
 					</Button>
 					<Button
-						sx={{ fontFamily: "Papyrus, fantasy" }}
+						sx={{
+							fontFamily: "Papyrus, fantasy",
+							fontFamily: "Papyrus, fantasy",
+							transition: "all 0.3s ease",
+							"&:hover": {
+								color: "#4cc9f0",
+								textShadow:
+									"0 0 10px #4cc9f0, 0 0 20px #4cc9f0, 0 0 30px #4cc9f0",
+							},
+						}}
 						color="inherit"
 						component={Link}
 						to="/spell-list"
@@ -30,7 +48,16 @@ const Header = () => {
 						Spells
 					</Button>
 					<Button
-						sx={{ fontFamily: "Papyrus, fantasy" }}
+						sx={{
+							fontFamily: "Papyrus, fantasy",
+							fontFamily: "Papyrus, fantasy",
+							transition: "all 0.3s ease",
+							"&:hover": {
+								color: "#4cc9f0",
+								textShadow:
+									"0 0 10px #4cc9f0, 0 0 20px #4cc9f0, 0 0 30px #4cc9f0",
+							},
+						}}
 						color="inherit"
 						component={Link}
 						to="/create-spell"
@@ -38,7 +65,16 @@ const Header = () => {
 						Create
 					</Button>
 					<Button
-						sx={{ fontFamily: "Papyrus, fantasy" }}
+						sx={{
+							fontFamily: "Papyrus, fantasy",
+							fontFamily: "Papyrus, fantasy",
+							transition: "all 0.3s ease",
+							"&:hover": {
+								color: "#4cc9f0",
+								textShadow:
+									"0 0 10px #4cc9f0, 0 0 20px #4cc9f0, 0 0 30px #4cc9f0",
+							},
+						}}
 						color="inherit"
 						component={Link}
 						to="/spellbook"

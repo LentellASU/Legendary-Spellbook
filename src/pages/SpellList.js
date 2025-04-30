@@ -64,14 +64,21 @@ const SpellList = () => {
 	
 
 	return (
-		<Box p={3}>
+		<Box
+			sx={{
+				backgroundColor: "black",
+				color: "#4cc9f0",
+				p: 3,
+				minHeight: "100vh",
+			}}
+		>
 			<Typography
-				sx={{ fontFamily: "Papyrus, fantasy" }}
+				sx={{ fontFamily: "Papyrus, fantasy", mb: 3 }}
 				variant="h4"
 				gutterBottom
 			>
 				Spell List
-			</Typography>			
+			</Typography>
 
 			<Grid container spacing={2} mb={3}>
 				<Grid item xs={12} md={4}>
@@ -81,20 +88,52 @@ const SpellList = () => {
 						variant="outlined"
 						value={search}
 						onChange={handleSearchChange}
+						sx={{
+							input: { color: "#4cc9f0" },
+							label: { color: "#4cc9f0" },
+							"& .MuiOutlinedInput-root": {
+								"& fieldset": {
+									borderColor: "#4cc9f0",
+								},
+								"&:hover fieldset": {
+									borderColor: "#4cc9f0",
+								},
+								"&.Mui-focused fieldset": {
+									borderColor: "#4cc9f0",
+								},
+							},
+						}}
 					/>
 				</Grid>
 
 				<Grid item xs={6} md={2}>
 					<FormControl fullWidth>
-						<InputLabel>Level</InputLabel>
+						<InputLabel sx={{ color: "#4cc9f0" }}>Level</InputLabel>
 						<Select
 							value={selectedLevel}
 							label="Level"
 							onChange={handleLevelChange}
+							sx={{
+								color: "#4cc9f0",
+								".MuiOutlinedInput-notchedOutline": { borderColor: "#4cc9f0" },
+							}}
 						>
-							<MenuItem value="">All</MenuItem>
+							<MenuItem
+								value=""
+								sx={{
+									color: "#4cc9f0",
+								}}
+							>
+								All
+							</MenuItem>
 							{[...Array(10).keys()].map((level) => (
-								<MenuItem key={level} value={level}>
+								<MenuItem
+									sx={{
+										color: "#4cc9f0",
+									}}
+									key={level}
+									value={level}
+								>
 									{level}
 								</MenuItem>
 							))}
@@ -104,16 +143,33 @@ const SpellList = () => {
 
 				<Grid item xs={6} md={2}>
 					<FormControl fullWidth>
-						<InputLabel>School</InputLabel>
+						<InputLabel sx={{ color: "#4cc9f0" }}>School</InputLabel>
 						<Select
 							value={selectedSchool}
 							label="School"
 							onChange={handleSchoolChange}
+							sx={{
+								color: "#4cc9f0",
+								".MuiOutlinedInput-notchedOutline": { borderColor: "#4cc9f0" },
+							}}
 						>
-							<MenuItem value="">All</MenuItem>
+							<MenuItem
+								value=""
+								sx={{
+									color: "#4cc9f0",
+								}}
+							>
+								All
+							</MenuItem>
 							{[...new Set(spells.map((spell) => spell.school.name))].map(
 								(school) => (
-									<MenuItem key={school} value={school}>
+									<MenuItem
+										sx={{
+											color: "#4cc9f0",
+										}}
+										key={school}
+										value={school}
+									>
 										{school}
 									</MenuItem>
 								)
@@ -124,16 +180,33 @@ const SpellList = () => {
 
 				<Grid item xs={6} md={2}>
 					<FormControl fullWidth>
-						<InputLabel>Casting Time</InputLabel>
+						<InputLabel sx={{ color: "#4cc9f0" }}>Casting Time</InputLabel>
 						<Select
 							value={selectedCastingTime}
 							label="Casting Time"
 							onChange={handleCastingTimeChange}
+							sx={{
+								color: "#4cc9f0",
+								".MuiOutlinedInput-notchedOutline": { borderColor: "#4cc9f0" },
+							}}
 						>
-							<MenuItem value="">All</MenuItem>
+							<MenuItem
+								value=""
+								sx={{
+									color: "#4cc9f0",
+								}}
+							>
+								All
+							</MenuItem>
 							{[...new Set(spells.map((spell) => spell.casting_time))].map(
 								(time) => (
-									<MenuItem key={time} value={time}>
+									<MenuItem
+										sx={{
+											color: "#4cc9f0",
+										}}
+										key={time}
+										value={time}
+									>
 										{time}
 									</MenuItem>
 								)
@@ -144,15 +217,32 @@ const SpellList = () => {
 
 				<Grid item xs={6} md={2}>
 					<FormControl fullWidth>
-						<InputLabel>Range</InputLabel>
+						<InputLabel sx={{ color: "#4cc9f0" }}>Range</InputLabel>
 						<Select
 							value={selectedRange}
 							label="Range"
 							onChange={handleRangeChange}
+							sx={{
+								color: "#4cc9f0",
+								".MuiOutlinedInput-notchedOutline": { borderColor: "#4cc9f0" },
+							}}
 						>
-							<MenuItem value="">All</MenuItem>
+							<MenuItem
+								value=""
+								sx={{
+									color: "#4cc9f0",
+								}}
+							>
+								All
+							</MenuItem>
 							{[...new Set(spells.map((spell) => spell.range))].map((range) => (
-								<MenuItem key={range} value={range}>
+								<MenuItem
+									sx={{
+										color: "#4cc9f0",
+									}}
+									key={range}
+									value={range}
+								>
 									{range}
 								</MenuItem>
 							))}

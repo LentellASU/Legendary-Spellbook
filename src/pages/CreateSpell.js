@@ -28,17 +28,11 @@ const CreateSpell = () => {
 			description: [spell.description],
 		};
 
-		// Retrieve existing spells from localStorage
 		const existingSpells = JSON.parse(localStorage.getItem("userSpells")) || [];
-
-		// Add new spell to existing spells
 		existingSpells.push(newSpell);
-
-		// Save updated spells array back to localStorage
 		localStorage.setItem("userSpells", JSON.stringify(existingSpells));
 
 		alert("Spell added successfully!");
-
 		setSpell({
 			name: "",
 			level: "",
@@ -51,76 +45,62 @@ const CreateSpell = () => {
 		});
 	};
 
+	const inputStyle = {
+		input: { color: "#4cc9f0" },
+		label: { color: "#4cc9f0" },
+		fieldset: { borderColor: "#4cc9f0" },
+		"& .MuiOutlinedInput-root:hover fieldset": {
+			borderColor: "#4cc9f0",
+		},
+		"& .MuiOutlinedInput-root.Mui-focused fieldset": {
+			borderColor: "#4cc9f0",
+			boxShadow: "0 0 8px #4cc9f0",
+		},
+	};
+
 	return (
-		<Box sx={{ maxWidth: "600px", mx: "auto", my: 4 }}>
-			<Typography variant="h4" gutterBottom>
+		<Box
+			sx={{
+				maxWidth: "600px",
+				mx: "auto",
+				my: 8,
+				p: 4,
+				backgroundColor: "black",
+				borderRadius: 2,
+				boxShadow: "0 0 12px rgba(76, 201, 240, 0.3)",
+			}}
+		>
+			<Typography
+				variant="h4"
+				gutterBottom
+				sx={{ color: "#4cc9f0", fontFamily: "Papyrus, fantasy" }}
+			>
 				Create New Spell
 			</Typography>
 			<form onSubmit={handleSubmit}>
-				<TextField
-					fullWidth
-					required
-					margin="normal"
-					name="name"
-					label="Spell Name"
-					value={spell.name}
-					onChange={handleChange}
-				/>
-				<TextField
-					fullWidth
-					required
-					margin="normal"
-					name="level"
-					label="Level (number)"
-					type="number"
-					value={spell.level}
-					onChange={handleChange}
-				/>
-				<TextField
-					fullWidth
-					required
-					margin="normal"
-					name="school"
-					label="School"
-					value={spell.school}
-					onChange={handleChange}
-				/>
-				<TextField
-					fullWidth
-					required
-					margin="normal"
-					name="casting_time"
-					label="Casting Time"
-					value={spell.casting_time}
-					onChange={handleChange}
-				/>
-				<TextField
-					fullWidth
-					required
-					margin="normal"
-					name="range"
-					label="Range"
-					value={spell.range}
-					onChange={handleChange}
-				/>
-				<TextField
-					fullWidth
-					required
-					margin="normal"
-					name="components"
-					label="Components (comma separated)"
-					value={spell.components}
-					onChange={handleChange}
-				/>
-				<TextField
-					fullWidth
-					required
-					margin="normal"
-					name="duration"
-					label="Duration"
-					value={spell.duration}
-					onChange={handleChange}
-				/>
+				{[
+					{ name: "name", label: "Spell Name" },
+					{ name: "level", label: "Level (number)", type: "number" },
+					{ name: "school", label: "School" },
+					{ name: "casting_time", label: "Casting Time" },
+					{ name: "range", label: "Range" },
+					{ name: "components", label: "Components (comma separated)" },
+					{ name: "duration", label: "Duration" },
+				].map(({ name, label, type }) => (
+					<TextField
+						key={name}
+						fullWidth
+						required
+						margin="normal"
+						name={name}
+						label={label}
+						type={type || "text"}
+						value={spell[name]}
+						onChange={handleChange}
+						sx={inputStyle}
+					/>
+				))}
+
 				<TextField
 					fullWidth
 					required
@@ -131,9 +111,25 @@ const CreateSpell = () => {
 					rows={4}
 					value={spell.description}
 					onChange={handleChange}
+					sx={inputStyle}
 				/>
 
-				<Button type="submit" variant="contained" sx={{ mt: 2 }}>
+				<Button
+					type="submit"
+					variant="contained"
+					sx={{
+						mt: 3,
+						backgroundColor: "#4cc9f0",
+						color: "#000",
+						fontWeight: "bold",
+						fontFamily: "Papyrus, fantasy",
+						boxShadow: "0 0 10px #4cc9f0",
+						"&:hover": {
+							backgroundColor: "#3bb8e0",
+							boxShadow: "0 0 15px #4cc9f0",
+						},
+					}}
+				>
 					Add Spell
 				</Button>
 			</form>
